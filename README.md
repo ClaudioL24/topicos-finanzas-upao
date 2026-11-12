@@ -45,8 +45,8 @@ pip install -r requirements.txt
 | 8 |  Examen parcial | - |, |
 | 9 | CAPM, SML y modelos multifactoriales | [`09_capm_multifactor`](09_capm_multifactor/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/09_capm_multifactor/clase09_practica.ipynb) |
 | 10 | Desempeño de portafolios y gestión del riesgo | [`10_desempeno_riesgo`](10_desempeno_riesgo/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/10_desempeno_riesgo/clase10_practica.ipynb) |
-| 11 | Variables macro y mercados financieros | [`11_macro_mercados`](11_macro_mercados/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/11_macro_mercados/clase11_apuntes.ipynb) |
-| 12 | Estructura temporal de tasas de interés (PC2 y TR2) | [`12_curva_rendimientos`](12_curva_rendimientos/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/12_curva_rendimientos/clase12_apuntes.ipynb) |
+| 11 | Variables macro y mercados financieros | [`11_macro_mercados`](11_macro_mercados/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/11_macro_mercados/clase11_practica.ipynb) |
+| 12 | Estructura temporal de tasas de interés (PC2 y TR2) | [`12_curva_rendimientos`](12_curva_rendimientos/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/12_curva_rendimientos/clase12_practica.ipynb) |
 | 13 | Política monetaria y mercados financieros | [`13_politica_monetaria`](13_politica_monetaria/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/13_politica_monetaria/clase13_practica.ipynb) |
 | 14 | Riesgo país y escenarios | [`14_riesgo_pais_escenarios`](14_riesgo_pais_escenarios/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/14_riesgo_pais_escenarios/clase14_practica.ipynb) |
 | 15 | Integración: valoración, portafolios y macro | [`15_integracion`](15_integracion/) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JonathanRosasV/topicos-finanzas-upao/blob/main/15_integracion/clase15_practica.ipynb) |
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 **PROMO = 20%·EP1 + 20%·EP2 + 30%·EP + 30%·EF** · Sustitutorio: semana 17 · Reforzamiento: semanas 7 y 14.
 
-La PC2 (informe país) y el TR2 (exposición) son dos evaluaciones independientes sobre un mismo trabajo en grupos de 2, cada una sobre 20 puntos: consigna y rúbrica en [`examenes/pc2_consigna.pdf`](examenes/pc2_consigna.pdf). Las semanas 10, 11 y 12 no tienen tarea semanal, y las semanas 11 y 12 no tienen práctica en Python.
+La PC2 (informe país) y el TR2 (exposición) son dos evaluaciones independientes sobre un mismo trabajo en grupos de 2, cada una sobre 20 puntos: consigna y rúbrica en [`examenes/pc2_consigna.pdf`](examenes/pc2_consigna.pdf). Las semanas 10, 11 y 12 no tienen tarea semanal. Las prácticas en Python de las semanas 11 y 12 son material de estudio y no se desarrollan en la sesión.
 
 Calendario 2026-20: clases los miércoles, desde el 02/09/2026. Las tareas semanales se entregan hasta el lunes de la semana siguiente, vía commit en el fork.
 

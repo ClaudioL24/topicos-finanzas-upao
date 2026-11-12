@@ -11,7 +11,11 @@
 
 ## Evaluación de la semana
 
-**PC2 y TR2: informe país y exposición** (en grupos de 2; dos evaluaciones independientes, cada una sobre 20 puntos), sobre los contenidos de las semanas 11 y 12. Consigna, rúbrica y ficha comparativa en `examenes/pc2_consigna.pdf`. Esta semana no tiene práctica en Python ni tarea semanal.
+**PC2 y TR2: informe país y exposición** (en grupos de 2; dos evaluaciones independientes, cada una sobre 20 puntos), sobre los contenidos de las semanas 11 y 12. Consigna, rúbrica y ficha comparativa en `examenes/pc2_consigna.pdf`. Esta semana no tiene tarea semanal.
+
+## Práctica en Python
+
+El ciclo económico, la política monetaria y los mercados con 25 años de datos de Estados Unidos (inflación implícita, fases del ciclo, regla de Taylor, retornos por fase) y el retorno de la BVL en soles y en dólares. Es material de estudio: no se desarrolla en la sesión, porque las horas de práctica del 18/11 son las exposiciones.
 
 ## Contenido de la carpeta
 
@@ -19,3 +23,4 @@
 |---|---|
 | `clase11_teoria.pdf` | Diapositivas de la clase (Beamer) |
 | `clase11_apuntes.ipynb` | Apuntes: conceptos clave de la semana, con ejemplos ejecutables e ítems resueltos |
+| `clase11_practica.ipynb` | Práctica con datos reales (FRED, Yahoo Finance y BCRPData); material de estudio, sin entrega |
