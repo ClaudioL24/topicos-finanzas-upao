@@ -2,25 +2,25 @@
 
 **Tópicos de Finanzas Avanzadas (ECON-421, UPAO 2026-20)**
 
-**Tema: entorno macroeconómico y mercados financieros de un país** · En parejas · Dos evaluaciones, cada una sobre 20 puntos
+**Tema: entorno macroeconómico y mercados financieros de un país** · En grupos de 2 · Dos evaluaciones, cada una sobre 20 puntos
 
 ## Descripción
 
-El trabajo comprende dos evaluaciones independientes sobre un país asignado por sorteo: el informe (PC2) y la exposición (TR2). Cada una se califica sobre 20 puntos. Las seis parejas desarrollan el mismo tema con la misma estructura, cada una para un país distinto: Perú, Chile, México, Brasil, Colombia y Estados Unidos. Los contenidos corresponden a las semanas 11 y 12 del curso y forman parte del examen final.
+El trabajo comprende dos evaluaciones independientes sobre un país asignado por sorteo: el informe (PC2) y la exposición (TR2). Cada una se califica sobre 20 puntos. Los seis grupos desarrollan el mismo tema con la misma estructura, cada uno para un país distinto: Perú, Chile, México, Brasil, Colombia y Estados Unidos. Los contenidos corresponden a las semanas 11 y 12 del curso y forman parte del examen final.
 
-El sorteo define las parejas y el país. No se admiten cambios de pareja ni de país. Esta semana no hay tarea semanal: este trabajo es el único encargo.
+El sorteo define los grupos y el país. No se admiten cambios de grupo ni de país. Esta semana no hay tarea semanal: este trabajo es el único encargo.
 
 ## Calendario
 
 | Fecha | Actividad |
 |---|---|
-| Miércoles 11 de noviembre | Sorteo de parejas y países |
+| Miércoles 11 de noviembre | Sorteo de grupos y países |
 | Miércoles 18 de noviembre, antes del inicio de la sesión | Entrega del informe y de las láminas en Canvas |
 | Miércoles 18 de noviembre, durante la sesión | Exposiciones y discusión comparada |
 
 ## Entregables
 
-1. **Informe en PDF.** Máximo 3 páginas, más la ficha comparativa como última página. Uno por pareja.
+1. **Informe en PDF.** Máximo 3 páginas, más la ficha comparativa como última página. Uno por grupo.
 2. **Láminas de la exposición en PDF.**
 
 No se entrega código. Los cálculos y gráficos pueden elaborarse con hoja de cálculo o con Python. Toda cifra debe indicar fuente y fecha de corte.
@@ -49,7 +49,7 @@ Rendimientos soberanos, índices y tipo de cambio: Investing.com o Yahoo Finance
 
 ## Exposición
 
-- 10 minutos por pareja, con participación de ambos integrantes, y 5 minutos de preguntas.
+- 10 minutos por grupo, con participación de ambos integrantes, y 5 minutos de preguntas.
 - Orden de exposición por sorteo al inicio de la sesión.
 - El docente decide qué integrante responde cada pregunta. Las preguntas pueden referirse a cualquier sección del informe, incluida la que expuso el otro integrante.
 - La sesión cierra con una discusión comparada de las seis fichas.
@@ -63,7 +63,7 @@ Rendimientos soberanos, índices y tipo de cambio: Investing.com o Yahoo Finance
 | Interpretación y postura | 4 | Postura de inversión derivada de las cifras del país (4) | Postura genérica, aplicable a cualquier país (2 a 3) | Sin postura o contradictoria con los datos (0 a 1) |
 | Ficha comparativa | 4 | Ocho indicadores completos, con unidad, fuente y fecha de corte (4) | Uno o dos indicadores faltantes o con error (2 a 3) | Tres o más faltantes o con error (0 a 1) |
 
-La nota del informe es común a los dos integrantes de la pareja.
+La nota del informe es común a los dos integrantes del grupo.
 
 ## Rúbrica de la exposición (TR2, 20 puntos)
 
@@ -73,7 +73,7 @@ La nota del informe es común a los dos integrantes de la pareja.
 | Láminas y tiempo | 4 | Láminas sobrias y legibles; 10 minutos con un minuto de tolerancia (4) | Exceso de texto o desvío de 2 a 3 minutos (2 a 3) | Láminas ilegibles o desvío mayor (0 a 1) |
 | Defensa (individual) | 10 | Respuestas precisas y fundamentadas; dominio de todo el trabajo, incluida la parte del otro integrante (10) | Responde su parte con imprecisiones; duda en el resto (5 a 8) | No sustenta lo expuesto (0 a 4) |
 
-La nota de la exposición de cada estudiante es la suma de los 10 puntos comunes a la pareja y los 10 puntos de su defensa individual.
+La nota de la exposición de cada estudiante es la suma de los 10 puntos comunes al grupo y los 10 puntos de su defensa individual.
 
 **Registro de notas.** El informe y la exposición son evaluaciones independientes: la nota del informe se registra como **PC2** y la nota de la exposición como **TR2**, cada una sobre 20 puntos. Según el sílabo, $EP2 = 0.5 \cdot PC2 + 0.5 \cdot TR2$. No hay un trabajo TR2 adicional.
 

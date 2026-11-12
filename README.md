@@ -62,13 +62,13 @@ pip install -r requirements.txt
 | PC1 (práctica calificada 1) | 3 | EP1 = 0.5·PC1 + 0.5·TR1  **20%** |
 | TR1 (informe de valoración) | 6 | |
 | **Examen parcial (EP)** | 8 | **30%** |
-| PC2 (informe país con ficha comparativa, en parejas) | 12 | EP2 = 0.5·PC2 + 0.5·TR2  **20%** |
+| PC2 (informe país con ficha comparativa, en grupos de 2) | 12 | EP2 = 0.5·PC2 + 0.5·TR2  **20%** |
 | TR2 (exposición y defensa individual del informe país) | 12 | |
 | **Examen final (EF)** | 16 | **30%** |
 
 **PROMO = 20%·EP1 + 20%·EP2 + 30%·EP + 30%·EF** · Sustitutorio: semana 17 · Reforzamiento: semanas 7 y 14.
 
-La PC2 (informe país) y el TR2 (exposición) son dos evaluaciones independientes sobre un mismo trabajo en parejas, cada una sobre 20 puntos: consigna y rúbrica en [`examenes/pc2_consigna.pdf`](examenes/pc2_consigna.pdf). Las semanas 10, 11 y 12 no tienen tarea semanal, y las semanas 11 y 12 no tienen práctica en Python.
+La PC2 (informe país) y el TR2 (exposición) son dos evaluaciones independientes sobre un mismo trabajo en grupos de 2, cada una sobre 20 puntos: consigna y rúbrica en [`examenes/pc2_consigna.pdf`](examenes/pc2_consigna.pdf). Las semanas 10, 11 y 12 no tienen tarea semanal, y las semanas 11 y 12 no tienen práctica en Python.
 
 Calendario 2026-20: clases los miércoles, desde el 02/09/2026. Las tareas semanales se entregan hasta el lunes de la semana siguiente, vía commit en el fork.
 
