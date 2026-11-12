@@ -338,6 +338,183 @@ def regresion_factores(exceso: pd.Series, factores: pd.DataFrame, anualizar_por:
 
 
 # ============================================================
+# Semana 10: Gestion activa, evaluacion de desempeno y riesgo de mercado
+# ============================================================
+
+def sharpe(retorno: float, rf: float, sigma: float) -> float:
+    """Ratio de Sharpe: exceso de retorno por unidad de riesgo total, (R - Rf) / sigma."""
+    return (retorno - rf) / sigma
+
+
+def treynor(retorno: float, rf: float, beta: float) -> float:
+    """Ratio de Treynor: exceso de retorno por unidad de riesgo sistematico, (R - Rf) / beta."""
+    return (retorno - rf) / beta
+
+
+def jensen(retorno: float, rf: float, beta: float, retorno_mercado: float) -> float:
+    """Alfa de Jensen: retorno realizado menos el exigido por el CAPM con el retorno realizado del mercado."""
+    return retorno - (rf + beta * (retorno_mercado - rf))
+
+
+def m2(retorno: float, rf: float, sigma: float, retorno_mercado: float, sigma_mercado: float) -> float:
+    """M cuadrado (Modigliani): retorno del fondo apalancado o desapalancado a la volatilidad del mercado,
+    menos el retorno del mercado. Es el Sharpe expresado en puntos de retorno: Rf + Sharpe x sigma_m - Rm."""
+    return rf + sharpe(retorno, rf, sigma) * sigma_mercado - retorno_mercado
+
+
+def ratio_informacion(retorno: float, retorno_benchmark: float, tracking_error: float) -> float:
+    """Ratio de informacion: retorno activo (R - R_benchmark) por unidad de riesgo activo (tracking error)."""
+    return (retorno - retorno_benchmark) / tracking_error
+
+
+def tracking_error_modelo(beta: float, sigma_mercado: float, sigma_idiosincratica: float) -> float:
+    """Riesgo activo frente al mercado implicado por el modelo de mercado: raiz de (beta - 1)^2 var_m + var_eps."""
+    return float(np.sqrt(((beta - 1) * sigma_mercado) ** 2 + sigma_idiosincratica ** 2))
+
+
+def ley_fundamental(ic: float, br: float, tc: float = 1.0) -> float:
+    """Ley fundamental de la gestion activa (Grinold): IR = IC x raiz(BR) x TC.
+
+    ic: coeficiente de informacion (correlacion entre pronosticos y resultados);
+    br: amplitud, numero de apuestas independientes por ano; tc: coeficiente de transferencia.
+    """
+    return ic * float(np.sqrt(br)) * tc
+
+
+def riesgo_activo_optimo(ir: float, sharpe_benchmark: float, sigma_benchmark: float) -> float:
+    """Nivel optimo de riesgo activo: sigma_A* = (IR / SR_B) x sigma_B. El Sharpe resultante cumple SR^2 = SR_B^2 + IR^2."""
+    return ir / sharpe_benchmark * sigma_benchmark
+
+
+def anos_para_significancia(alfa: float, sigma_idiosincratica: float, t: float = 2.0) -> float:
+    """Anos de historia necesarios para que un alfa anual sea significativo: T = (t x sigma_eps / alfa)^2."""
+    return (t * sigma_idiosincratica / alfa) ** 2
+
+
+def drawdown_maximo(valor: pd.Series) -> float:
+    """Caida maxima desde un pico, como fraccion del pico (numero negativo)."""
+    v = pd.Series(valor, dtype=float)
+    return float((v / v.cummax() - 1).min())
+
+
+def backtest(ret: pd.DataFrame, pesos, rebalanceo: str = "nunca", banda: float = 0.0,
+             cada: int = 1, costo: float = 0.0) -> dict:
+    """Simula un portafolio con pesos objetivo sobre una tabla de retornos periodicos.
+
+    rebalanceo: "nunca" (comprar y mantener: los pesos derivan), "periodico" (cada `cada` periodos
+    se vuelve a los pesos objetivo) o "bandas" (se rebalancea cuando algun peso se aleja mas de
+    `banda` puntos del objetivo, en terminos absolutos). costo: fraccion del monto negociado.
+    Devuelve el valor del portafolio (inicio 1), los pesos al cierre de cada periodo, el numero
+    de rebalanceos y la rotacion acumulada (suma de |compras| como fraccion del valor).
+    """
+    r = ret.fillna(0.0).to_numpy(dtype=float)
+    objetivo = np.asarray(pesos, dtype=float)
+    objetivo = objetivo / objetivo.sum()
+    w = objetivo.copy()
+    valor, pesos_t, n_reb, rotacion = [], [], 0, 0.0
+    v = 1.0
+    for t in range(len(r)):
+        crec = w * (1 + r[t])
+        v *= crec.sum()
+        w = crec / crec.sum()
+        hay = (rebalanceo == "periodico" and (t + 1) % cada == 0) or \
+              (rebalanceo == "bandas" and np.abs(w - objetivo).max() > banda)
+        if hay:
+            negociado = np.abs(objetivo - w).sum() / 2
+            v *= (1 - costo * negociado * 2)
+            rotacion += negociado
+            w = objetivo.copy()
+            n_reb += 1
+        valor.append(v)
+        pesos_t.append(w.copy())
+    return {"valor": pd.Series(valor, index=ret.index), "pesos": pd.DataFrame(pesos_t, index=ret.index, columns=ret.columns),
+            "rebalanceos": n_reb, "rotacion": rotacion}
+
+
+def medidas_desempeno(ret: pd.DataFrame, rf, mercado: pd.Series, periodos: int = 12) -> pd.DataFrame:
+    """Tabla de desempeno anualizada para cada columna de `ret` (retornos periodicos simples).
+
+    rf: tasa libre de riesgo periodica (Serie alineada o escalar). mercado: retornos periodicos
+    del benchmark. Devuelve retorno, volatilidad, beta, alfa de Jensen (con t), Sharpe, Treynor,
+    M2, tracking error, ratio de informacion, R2 y caida maxima.
+    """
+    import statsmodels.api as sm
+    rf_s = rf if isinstance(rf, pd.Series) else pd.Series(rf, index=ret.index)
+    filas = {}
+    ex_m = (mercado - rf_s).dropna()
+    mu_m, sd_m = mercado.loc[ex_m.index].mean() * periodos, mercado.loc[ex_m.index].std() * np.sqrt(periodos)
+    rf_a = rf_s.loc[ex_m.index].mean() * periodos
+    for col in ret.columns:
+        datos = pd.concat([(ret[col] - rf_s).rename("y"), ex_m.rename("x")], axis=1).dropna()
+        modelo = sm.OLS(datos["y"], sm.add_constant(datos["x"])).fit()
+        mu, sd = ret[col].loc[datos.index].mean() * periodos, ret[col].loc[datos.index].std() * np.sqrt(periodos)
+        activo = (ret[col] - mercado).loc[datos.index]
+        te = activo.std() * np.sqrt(periodos)
+        beta = modelo.params["x"]
+        filas[col] = {"retorno": mu, "sigma": sd, "beta": beta,
+                      "alfa": modelo.params["const"] * periodos, "t_alfa": modelo.tvalues["const"],
+                      "sharpe": (mu - rf_a) / sd, "treynor": (mu - rf_a) / beta,
+                      "m2": rf_a + (mu - rf_a) / sd * sd_m - mu_m,
+                      "tracking_error": te, "ir": activo.mean() * periodos / te if te > 0 else np.nan,
+                      "r2": modelo.rsquared,
+                      "caida_maxima": drawdown_maximo((1 + ret[col].loc[datos.index]).cumprod()), "n": int(modelo.nobs)}
+    return pd.DataFrame(filas).T
+
+
+def var_parametrico(mu: float, sigma: float, nivel: float = 0.95, monto: float = 1.0) -> float:
+    """VaR parametrico (normal): monto x (z x sigma - mu), expresado como perdida positiva.
+
+    mu y sigma deben estar en el horizonte del VaR (por ejemplo, mensuales para un VaR a un mes).
+    """
+    from scipy.stats import norm
+    z = norm.ppf(nivel)
+    return monto * (z * sigma - mu)
+
+
+def es_parametrico(mu: float, sigma: float, nivel: float = 0.95, monto: float = 1.0) -> float:
+    """Expected shortfall (CVaR) normal: perdida esperada condicional a superar el VaR."""
+    from scipy.stats import norm
+    z = norm.ppf(nivel)
+    return monto * (sigma * norm.pdf(z) / (1 - nivel) - mu)
+
+
+def var_historico(ret, nivel: float = 0.95, monto: float = 1.0) -> float:
+    """VaR historico: el percentil (1 - nivel) de los retornos observados, como perdida positiva."""
+    r = np.asarray(ret, dtype=float)
+    return -monto * float(np.quantile(r, 1 - nivel))
+
+
+def es_historico(ret, nivel: float = 0.95, monto: float = 1.0) -> float:
+    """Expected shortfall historico: promedio de las perdidas que superan el VaR historico."""
+    r = np.asarray(ret, dtype=float)
+    corte = np.quantile(r, 1 - nivel)
+    return -monto * float(r[r <= corte].mean())
+
+
+def var_montecarlo(mu: float, sigma: float, nivel: float = 0.95, monto: float = 1.0,
+                   n: int = 100_000, semilla: int = 0, retornos=None) -> float:
+    """VaR por simulacion: normal con (mu, sigma) o, si se pasa `retornos`, bootstrap de los observados."""
+    rng = np.random.default_rng(semilla)
+    if retornos is not None:
+        sim = rng.choice(np.asarray(retornos, dtype=float), size=n, replace=True)
+    else:
+        sim = rng.normal(mu, sigma, size=n)
+    return -monto * float(np.quantile(sim, 1 - nivel))
+
+
+def escalar_var(var_1: float, horizonte: int) -> float:
+    """Regla de la raiz del tiempo: VaR a h periodos = VaR de un periodo x raiz(h) (solo si mu es ~0 y sin autocorrelacion)."""
+    return var_1 * float(np.sqrt(horizonte))
+
+
+def excepciones_var(ret, var_serie) -> dict:
+    """Backtest del VaR: cuenta los periodos en que la perdida supero el VaR (en fraccion del monto)."""
+    r, v = np.asarray(ret, dtype=float), np.asarray(var_serie, dtype=float)
+    exc = r < -v
+    return {"excepciones": int(exc.sum()), "periodos": int(len(r)), "fraccion": float(exc.mean())}
+
+
+# ============================================================
 # Retornos y utilidades básicas
 # ============================================================
 
@@ -360,6 +537,5 @@ def resumen_regresion(modelo) -> pd.DataFrame:
 # ============================================================
 # Próximas semanas (se completan en clase)
 # ============================================================
-# Semana 10: sharpe(), treynor(), jensen(), var_historico(), var_parametrico()
 # Semana 12: nelson_siegel(), bootstrap_curva()
 

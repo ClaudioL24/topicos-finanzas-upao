@@ -5,20 +5,18 @@
 
 ## Objetivos de aprendizaje
 
-- Distinguir tasas spot, forward y de rendimiento al vencimiento.
+- Distinguir tasas spot, tasa par, rendimiento al vencimiento y tasas forward.
+- Valorar un bono con la curva spot y calcular tasas forward implícitas.
 - Explicar las teorías de la estructura temporal y qué señala una curva invertida.
-- Construir curvas por bootstrapping y ajustar Nelson-Siegel.
-- Interpretar expectativas de mercado a partir de la curva.
+- Interpretar expectativas de mercado a partir de la pendiente de la curva.
 
-## Práctica en Python
+## Evaluación de la semana
 
-Curvas soberanas de Perú (BCRP) y EE.UU. (FRED): bootstrapping simple y ajuste Nelson-Siegel.
+Las semanas 11 y 12 se evalúan con la **PC2 y TR2: informe país y exposición** (`examenes/pc2_consigna.pdf`). Los indicadores 5, 6 y 7 de la ficha comparativa se interpretan con la guía de la sección 8 de los apuntes. Esta semana no tiene práctica en Python ni tarea semanal.
 
 ## Contenido de la carpeta
 
 | Archivo | Descripción |
 |---|---|
 | `clase12_teoria.pdf` | Diapositivas de la clase (Beamer) |
-| `clase12_apuntes.ipynb` | Apuntes: conceptos clave de la semana, con ejemplos ejecutables |
-| `clase12_practica.ipynb` | Notebook desarrollado en la sesión práctica |
-| `clase12_tarea.ipynb` | Entregable de la semana (fork + commit + push) |
+| `clase12_apuntes.ipynb` | Apuntes: conceptos clave de la semana, con ejemplos ejecutables e ítems resueltos |

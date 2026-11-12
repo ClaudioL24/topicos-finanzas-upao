@@ -7,17 +7,15 @@
 
 - Explicar cómo crecimiento, inflación y tasas afectan los precios de los activos.
 - Relacionar el ciclo económico con las primas de riesgo y la valoración.
-- Estimar un modelo macro-financiero con datos reales del Perú.
+- Convertir retornos en moneda local a dólares y relacionar los términos de intercambio con el mercado peruano.
 
-## Práctica en Python
+## Evaluación de la semana
 
-Modelo insignia del curso: r_IGBVL ~ r_cobre + ΔTC con las APIs de BCRPData (`utils/bcrp.py`) y FRED. **Esta semana: PC2 (U2, sem 6-10).**
+**PC2 y TR2: informe país y exposición** (en parejas), sobre los contenidos de las semanas 11 y 12. Consigna, rúbrica y ficha comparativa en `examenes/pc2_consigna.pdf`. Esta semana no tiene práctica en Python ni tarea semanal.
 
 ## Contenido de la carpeta
 
 | Archivo | Descripción |
 |---|---|
 | `clase11_teoria.pdf` | Diapositivas de la clase (Beamer) |
-| `clase11_apuntes.ipynb` | Apuntes: conceptos clave de la semana, con ejemplos ejecutables |
-| `clase11_practica.ipynb` | Notebook desarrollado en la sesión práctica |
-| `clase11_tarea.ipynb` | Entregable de la semana (fork + commit + push) |
+| `clase11_apuntes.ipynb` | Apuntes: conceptos clave de la semana, con ejemplos ejecutables e ítems resueltos |
