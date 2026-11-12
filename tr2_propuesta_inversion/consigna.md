@@ -2,7 +2,7 @@
 
 **Tópicos de Finanzas Avanzadas (ECON-421, UPAO 2026-20)**
 
-Desde el semestre 2026-20, el TR2 ya no es una propuesta de inversión ante un comité de gerencia. La PC2 y el TR2 se evalúan con un mismo trabajo en parejas, el **informe país con exposición**:
+Desde el semestre 2026-20, el TR2 ya no es una propuesta de inversión ante un comité de gerencia. La PC2 y el TR2 son dos evaluaciones independientes, cada una sobre 20 puntos, basadas en un mismo trabajo en parejas, el **informe país con exposición**:
 
 - **PC2:** informe país con ficha comparativa.
 - **TR2:** exposición y defensa individual del informe.

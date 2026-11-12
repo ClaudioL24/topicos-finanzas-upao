@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 **PROMO = 20%·EP1 + 20%·EP2 + 30%·EP + 30%·EF** · Sustitutorio: semana 17 · Reforzamiento: semanas 7 y 14.
 
-La PC2 y el TR2 se evalúan con un mismo trabajo, el informe país con exposición: consigna y rúbrica en [`examenes/pc2_consigna.pdf`](examenes/pc2_consigna.pdf). Las semanas 10, 11 y 12 no tienen tarea semanal, y las semanas 11 y 12 no tienen práctica en Python.
+La PC2 (informe país) y el TR2 (exposición) son dos evaluaciones independientes sobre un mismo trabajo en parejas, cada una sobre 20 puntos: consigna y rúbrica en [`examenes/pc2_consigna.pdf`](examenes/pc2_consigna.pdf). Las semanas 10, 11 y 12 no tienen tarea semanal, y las semanas 11 y 12 no tienen práctica en Python.
 
 Calendario 2026-20: clases los miércoles, desde el 02/09/2026. Las tareas semanales se entregan hasta el lunes de la semana siguiente, vía commit en el fork.
 

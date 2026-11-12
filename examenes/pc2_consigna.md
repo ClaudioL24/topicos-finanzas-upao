@@ -2,13 +2,13 @@
 
 **Tópicos de Finanzas Avanzadas (ECON-421, UPAO 2026-20)**
 
-**Tema: entorno macroeconómico y mercados financieros de un país** · En parejas · Sobre 20 puntos
+**Tema: entorno macroeconómico y mercados financieros de un país** · En parejas · Dos evaluaciones, cada una sobre 20 puntos
 
 ## Descripción
 
-La PC2 y el TR2 se evalúan con un mismo trabajo: un informe y una exposición sobre un país asignado por sorteo. Las seis parejas desarrollan el mismo tema con la misma estructura, cada una para un país distinto: Perú, Chile, México, Brasil, Colombia y Estados Unidos. Los contenidos corresponden a las semanas 11 y 12 del curso y forman parte del examen final.
+El trabajo comprende dos evaluaciones independientes sobre un país asignado por sorteo: el informe (PC2) y la exposición (TR2). Cada una se califica sobre 20 puntos. Las seis parejas desarrollan el mismo tema con la misma estructura, cada una para un país distinto: Perú, Chile, México, Brasil, Colombia y Estados Unidos. Los contenidos corresponden a las semanas 11 y 12 del curso y forman parte del examen final.
 
-El sorteo define las parejas y el país. No se admiten cambios de pareja ni de país. Esta semana no hay tarea semanal: la PC2 es el único encargo.
+El sorteo define las parejas y el país. No se admiten cambios de pareja ni de país. Esta semana no hay tarea semanal: este trabajo es el único encargo.
 
 ## Calendario
 
@@ -54,21 +54,28 @@ Rendimientos soberanos, índices y tipo de cambio: Investing.com o Yahoo Finance
 - El docente decide qué integrante responde cada pregunta. Las preguntas pueden referirse a cualquier sección del informe, incluida la que expuso el otro integrante.
 - La sesión cierra con una discusión comparada de las seis fichas.
 
-## Rúbrica (20 puntos)
+## Rúbrica del informe (PC2, 20 puntos)
 
 | Criterio | Pts | Logrado | En proceso | En inicio |
 |------------|--|-------------------|-----------------|---------------|
-| Informe: uso de los conceptos | 3 | Fase del ciclo, tasa real y postura monetaria correctamente definidas y aplicadas (3) | Errores menores de concepto (2) | Errores de fondo (0 a 1) |
-| Informe: datos y cálculos | 3 | Datos vigentes, con fuente y fecha de corte; cálculos correctos (tasa real, retornos) y gráficos propios (3) | Datos desactualizados, un cálculo con error o gráficos copiados de terceros (2) | Cálculos ausentes o con errores de fondo; sin fuentes (0 a 1) |
-| Informe: interpretación y postura | 2 | Postura de inversión derivada de las cifras del país (2) | Postura genérica, aplicable a cualquier país (1) | Sin postura o contradictoria con los datos (0) |
-| Exposición: claridad | 3 | Secuencia lógica; cada gráfico o tabla se explica y se cierra con una conclusión (3) | Contenido correcto, pero leído o sin conclusiones (2) | Desordenada o con errores no corregidos (0 a 1) |
-| Exposición: láminas y tiempo | 2 | Láminas sobrias y legibles; 10 minutos con un minuto de tolerancia (2) | Exceso de texto o desvío de 2 a 3 minutos (1) | Láminas ilegibles o desvío mayor (0) |
-| Ficha comparativa | 2 | Ocho indicadores completos, con unidad, fuente y fecha de corte (2) | Uno o dos indicadores faltantes o con error (1) | Tres o más faltantes o con error (0) |
-| Defensa (individual) | 5 | Respuestas precisas y fundamentadas; dominio de todo el trabajo, incluida la parte del otro integrante (5) | Responde su parte con imprecisiones; duda en el resto (3) | No sustenta lo expuesto (0 a 1) |
+| Uso de los conceptos | 6 | Fase del ciclo, tasa real y postura monetaria correctamente definidas y aplicadas (6) | Errores menores de concepto (3 a 5) | Errores de fondo (0 a 2) |
+| Datos y cálculos | 6 | Datos vigentes, con fuente y fecha de corte; cálculos correctos (tasa real, retornos) y gráficos propios (6) | Datos desactualizados, un cálculo con error o gráficos copiados de terceros (3 a 5) | Cálculos ausentes o con errores de fondo; sin fuentes (0 a 2) |
+| Interpretación y postura | 4 | Postura de inversión derivada de las cifras del país (4) | Postura genérica, aplicable a cualquier país (2 a 3) | Sin postura o contradictoria con los datos (0 a 1) |
+| Ficha comparativa | 4 | Ocho indicadores completos, con unidad, fuente y fecha de corte (4) | Uno o dos indicadores faltantes o con error (2 a 3) | Tres o más faltantes o con error (0 a 1) |
 
-La nota de cada estudiante es la suma de los 15 puntos comunes a la pareja y los 5 puntos de su defensa individual.
+La nota del informe es común a los dos integrantes de la pareja.
 
-**Registro de notas.** El informe y la ficha comparativa (10 puntos) se registran como **PC2**; la exposición y la defensa individual (10 puntos) se registran como **TR2**. Ambas notas se expresan en escala vigesimal (puntaje multiplicado por 2). Como $EP2 = 0.5 \cdot PC2 + 0.5 \cdot TR2$, el EP2 es igual al puntaje total de esta rúbrica. No hay un trabajo TR2 adicional.
+## Rúbrica de la exposición (TR2, 20 puntos)
+
+| Criterio | Pts | Logrado | En proceso | En inicio |
+|------------|--|-------------------|-----------------|---------------|
+| Claridad | 6 | Secuencia lógica; cada gráfico o tabla se explica y se cierra con una conclusión (6) | Contenido correcto, pero leído o sin conclusiones (3 a 5) | Desordenada o con errores no corregidos (0 a 2) |
+| Láminas y tiempo | 4 | Láminas sobrias y legibles; 10 minutos con un minuto de tolerancia (4) | Exceso de texto o desvío de 2 a 3 minutos (2 a 3) | Láminas ilegibles o desvío mayor (0 a 1) |
+| Defensa (individual) | 10 | Respuestas precisas y fundamentadas; dominio de todo el trabajo, incluida la parte del otro integrante (10) | Responde su parte con imprecisiones; duda en el resto (5 a 8) | No sustenta lo expuesto (0 a 4) |
+
+La nota de la exposición de cada estudiante es la suma de los 10 puntos comunes a la pareja y los 10 puntos de su defensa individual.
+
+**Registro de notas.** El informe y la exposición son evaluaciones independientes: la nota del informe se registra como **PC2** y la nota de la exposición como **TR2**, cada una sobre 20 puntos. Según el sílabo, $EP2 = 0.5 \cdot PC2 + 0.5 \cdot TR2$. No hay un trabajo TR2 adicional.
 
 ## Ficha comparativa
 
