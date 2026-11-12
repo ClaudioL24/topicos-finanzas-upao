@@ -535,7 +535,89 @@ def resumen_regresion(modelo) -> pd.DataFrame:
     })
 
 # ============================================================
-# Próximas semanas (se completan en clase)
+# Semana 11: Variables macroeconomicas y mercados financieros
 # ============================================================
-# Semana 12: nelson_siegel(), bootstrap_curva()
 
+def fisher_real(nominal: float, inflacion: float) -> float:
+    """Tasa real exacta de Fisher: (1 + i)/(1 + pi) - 1. Insumos y resultado en decimales."""
+    return (1 + nominal) / (1 + inflacion) - 1
+
+
+def inflacion_implicita(nominal, indexado):
+    """Inflacion implicita (breakeven): (1 + rendimiento nominal)/(1 + rendimiento indexado) - 1. En decimales."""
+    return (1 + nominal) / (1 + indexado) - 1
+
+
+def regla_taylor(r_neutral, inflacion, meta, brecha):
+    """Regla de Taylor: i = r* + pi + 0.5(pi - meta) + 0.5(brecha). Todo en puntos porcentuales."""
+    return r_neutral + inflacion + 0.5 * (inflacion - meta) + 0.5 * brecha
+
+
+def postura_monetaria(tasa: float, inflacion_esperada: float, r_neutral: float, tolerancia: float = 0.25) -> tuple[float, str]:
+    """Tasa real ex ante (tasa - inflacion esperada) y postura frente a la tasa neutral. En puntos porcentuales."""
+    real = tasa - inflacion_esperada
+    if real > r_neutral + tolerancia:
+        return real, "contractiva"
+    if real < r_neutral - tolerancia:
+        return real, "expansiva"
+    return real, "neutral"
+
+
+def fase_ciclo(brecha: float, cambio_brecha: float) -> str:
+    """Fase del ciclo segun el nivel de la brecha del producto y su direccion (cambio respecto del periodo de comparacion)."""
+    if brecha < 0:
+        return "Recuperación" if cambio_brecha > 0 else "Contracción"
+    return "Expansión" if cambio_brecha > 0 else "Desaceleración"
+
+
+def retorno_usd(r_local, variacion_moneda):
+    """Retorno en dolares: (1 + retorno local)(1 + variacion de la moneda local frente al dolar) - 1. En decimales."""
+    return (1 + r_local) * (1 + variacion_moneda) - 1
+
+
+# ============================================================
+# Semana 12: Estructura temporal de tasas de interes
+# ============================================================
+
+def factores_descuento(spot) -> pd.Series:
+    """Factores de descuento 1/(1 + s_t)^t a partir de tasas spot anuales (decimales) indexadas por plazo en anos."""
+    s = pd.Series(spot, dtype=float)
+    return 1 / (1 + s) ** s.index.to_numpy(dtype=float)
+
+
+def precio_con_curva(cupon: float, plazo: int, spot, nominal: float = 100.0) -> float:
+    """Precio de un bono de cupon anual descontando cada flujo con la tasa spot de su plazo."""
+    df = factores_descuento(spot)
+    return float(sum(cupon * df[t] for t in range(1, plazo + 1)) + nominal * df[plazo])
+
+
+def tasa_par(spot, plazo: int) -> float:
+    """Tasa par: cupon (por unidad de nominal) con el que un bono de ese plazo vale 100."""
+    df = factores_descuento(spot)
+    return float((1 - df[plazo]) / sum(df[t] for t in range(1, plazo + 1)))
+
+
+def bootstrap_curva(par) -> pd.Series:
+    """Tasas spot a partir de tasas par anuales (decimales) para los plazos 1, 2, ..., n, por bootstrapping."""
+    par = pd.Series(par, dtype=float).sort_index()
+    df = {}
+    for t in par.index:
+        c = par[t]
+        df[t] = (1 - c * sum(df[k] for k in df)) / (1 + c)
+    return pd.Series({t: df[t] ** (-1 / t) - 1 for t in df}, name="spot")
+
+
+def tasa_forward(spot, a: int, b: int) -> float:
+    """Tasa forward f(a, b): tasa a b anos que empieza dentro de a anos, implicita en la curva spot."""
+    s = pd.Series(spot, dtype=float)
+    return float(((1 + s[a + b]) ** (a + b) / (1 + s[a]) ** a) ** (1 / b) - 1)
+
+
+def duracion(cupon: float, plazo: int, y: float, nominal: float = 100.0) -> dict:
+    """Precio, duracion de Macaulay y duracion modificada de un bono de cupon anual al rendimiento y (decimal)."""
+    t = np.arange(1, plazo + 1)
+    flujos = np.full(plazo, float(cupon)); flujos[-1] += nominal
+    vp_f = flujos / (1 + y) ** t
+    precio = float(vp_f.sum())
+    mac = float((t * vp_f).sum() / precio)
+    return {"precio": precio, "macaulay": mac, "modificada": mac / (1 + y)}
