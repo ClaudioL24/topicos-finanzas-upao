@@ -8,7 +8,18 @@
 
 El trabajo comprende dos evaluaciones independientes sobre un país asignado por sorteo: el informe (PC2) y la exposición (TR2). Cada una se califica sobre 20 puntos. Los seis grupos desarrollan el mismo tema con la misma estructura, cada uno para un país distinto: Perú, Chile, México, Brasil, Colombia y Estados Unidos. Los contenidos corresponden a las semanas 11 y 12 del curso y forman parte del examen final.
 
-El sorteo define los grupos y el país. No se admiten cambios de grupo ni de país. Esta semana no hay tarea semanal: este trabajo es el único encargo.
+Los grupos y los países se asignaron por sorteo el 11 de noviembre. No se admiten cambios de grupo ni de país. Esta semana no hay tarea semanal: este trabajo es el único encargo.
+
+## Grupos y países
+
+| Grupo | País | Integrantes |
+|---|---|---|
+| 1 | Brasil | Nerea P. y Bruno M. |
+| 2 | Estados Unidos | Eduardo C. y Francia R. |
+| 3 | Perú | D'Alessandro P. y Jesús C. |
+| 4 | Colombia | Juan M. y Julia E. |
+| 5 | Chile | Diego V. y Andrea C. |
+| 6 | México | Claudio L. y Luciana P. |
 
 ## Calendario
 

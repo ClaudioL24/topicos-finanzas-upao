@@ -21,4 +21,4 @@ Backtest de buy&hold vs. rebalanceo periódico; todos los ratios de desempeño y
 | `clase10_teoria.pdf` | Diapositivas de la clase (Beamer) |
 | `clase10_apuntes.ipynb` | Apuntes: conceptos clave de la semana, con ejemplos ejecutables |
 | `clase10_practica.ipynb` | Notebook desarrollado en la sesión práctica |
-| `clase10_tarea.ipynb` | Ejercicio opcional, sin entrega ni nota (esta semana el encargo es el informe país de la PC2 y el TR2) |
+| `clase10_tarea.ipynb` | Ejercicio opcional, sin entrega ni nota (esta semana el encargo es el informe país, PC2, y su exposición, TR2, en grupos de 2) |

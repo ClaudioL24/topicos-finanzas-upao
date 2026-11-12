@@ -11,7 +11,7 @@
 
 ## Evaluación de la semana
 
-**PC2 y TR2: informe país y exposición** (en parejas), sobre los contenidos de las semanas 11 y 12. Consigna, rúbrica y ficha comparativa en `examenes/pc2_consigna.pdf`. Esta semana no tiene práctica en Python ni tarea semanal.
+**PC2 y TR2: informe país y exposición** (en grupos de 2; dos evaluaciones independientes, cada una sobre 20 puntos), sobre los contenidos de las semanas 11 y 12. Consigna, rúbrica y ficha comparativa en `examenes/pc2_consigna.pdf`. Esta semana no tiene práctica en Python ni tarea semanal.
 
 ## Contenido de la carpeta
 
