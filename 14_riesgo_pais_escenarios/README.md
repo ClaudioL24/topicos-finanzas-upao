@@ -11,7 +11,7 @@
 
 ## Práctica en Python
 
-Serie EMBIG Perú y análisis de escenarios sobre el DCF de la Unidad 1. **Esta semana se entrega el TR2** (propuesta de inversión ante comité de gerencia). *Semana con sesión de reforzamiento.*
+Serie EMBIG Perú y análisis de escenarios sobre el DCF de la Unidad 1, con aplicación a la postura de inversión del informe país. *Semana con sesión de reforzamiento.*
 
 ## Contenido de la carpeta
 
